@@ -1,4 +1,4 @@
-# covidfight
+# covid19fight
 
 A new Flutter application.
 
