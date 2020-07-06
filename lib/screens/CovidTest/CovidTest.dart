@@ -8,8 +8,11 @@ class CovidTest extends StatefulWidget {
 class _CovidTestState extends State<CovidTest> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text("Hiha"),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("hehaw"),
+      ),
+      body: Text("Hiha"),
     );
   }
 }
