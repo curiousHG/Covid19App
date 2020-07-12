@@ -10,9 +10,15 @@ class _CovidTestState extends State<CovidTest> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("hehaw"),
+        title: Text(
+          "hehaw",
+          style: Theme.of(context).textTheme.headline6,
+        ),
       ),
-      body: Text("Hiha"),
+      body: Text(
+        "Hiha",
+        style: Theme.of(context).textTheme.headline5,
+      ),
     );
   }
 }

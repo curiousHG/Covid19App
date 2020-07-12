@@ -11,13 +11,11 @@ class _StatisticsState extends State<Statistics> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.yellow,
-        title: Text("Statistics",
-          style: TextStyle(
-            color: Colors.green[900]
-        ),
+        title: Text(
+          "Statistics",
+          style: Theme.of(context).textTheme.headline5,
         ),
       ),
-
     );
   }
 }
