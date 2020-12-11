@@ -14,93 +14,88 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "LETS FIGHT COVID",
-          style: Theme.of(context).textTheme.headline6,
+            "LETS FIGHT COVID",
+            style: TextStyle(
+                color:Colors.red,
+                fontSize: 35
+            )
         ),
-        backgroundColor: Colors.pink,
-        centerTitle: true,
-      ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            height: 100,
-            width: double.infinity,
-            margin: EdgeInsets.all(10),
-            child: RaisedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => CovidTest(),
+          backgroundColor: Colors.black,
+          centerTitle: true),
+    body: GridView.count(
+      crossAxisCount: 2,
+      children: <Widget>[
+        Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: RaisedButton(
+            onPressed:(){
+              Navigator.push(context, MaterialPageRoute(builder: (context) => CovidTest())
+              );
+              },
+            color: Colors.blue,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(30)
+            ),
+            child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  'Take a Test',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 30
                   ),
+                ),
+              ),
+            ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: RaisedButton(
+            onPressed:(){
+              Navigator.push(context, MaterialPageRoute(builder: (context) => HospitalLists())
+              );
+              },
+            color: Colors.blue,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30)
+            ),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  'Find a Hospital',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 30
+                  ),
+                ),
+              ),
+            ),
+        ),
+          Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: RaisedButton(
+              onPressed:(){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Statistics())
                 );
               },
-              color: Colors.amberAccent,
+              color: Colors.blue,
               shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30)),
-              child: Text(
-                'Take a Test',
-                style: Theme.of(context).textTheme.headline5,
-                textAlign: TextAlign.center,
+                  borderRadius: BorderRadius.circular(30)
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  'Statistics',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 30
+                  ),
+                ),
               ),
             ),
           ),
-          Container(
-            height: 300,
-            child: GridView.count(
-              crossAxisCount: 2,
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.all(12.0),
-                  child: RaisedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => HospitalLists(),
-                        ),
-                      );
-                    },
-                    color: Colors.amberAccent,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                    child: Text(
-                      'Find a Hospital',
-                      style: Theme.of(context).textTheme.headline5,
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(12.0),
-                  child: RaisedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => Statistics(),
-                        ),
-                      );
-                    },
-                    color: Colors.amberAccent,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                    child: Text(
-                      'Statistics',
-                      style: Theme.of(context).textTheme.headline5,
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
+      ],
+    ),
     );
   }
 }
